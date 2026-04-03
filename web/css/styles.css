@@ -1,0 +1,104 @@
+:root {
+    --neon-red: #ff0000;
+    --dark-bg: #0a0a0a;
+    --card-bg: #151515;
+}
+
+html {
+    background-color: black;
+}
+
+/* Ojito de Logo */
+#eye {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    height: auto;
+}
+
+/* ID del Titulo */
+#Tittle-Tool {
+    color: rgba(255, 0, 0, 0.767);
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+/* Clase hover para mouse e iluminacion Neon */
+#Tittle-Tool:hover {
+    color: #ff0000;
+    text-shadow: 
+        0 0 5px #9b9b9b,
+        0 0 10px #9b9b9b,
+        0 0 20px #ff0000ab,
+        0 0 40px #ff0000ab,
+        0 0 80px #ff0000ab,
+        0 0 90px #ff0000ab,
+        0 0 100px #ff0000ab;
+}
+
+.Secciones {
+    display: grid;
+    /* Forzar 4 columnas iguales, pero manteniendo respuesta en móviles */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Media query para que no se rompa en pantallas pequeñas (celulares) */
+@media (max-width: 1024px) {
+    .Secciones {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .Secciones {
+        grid-template-columns: 1fr; /* 1 columna en móviles */
+    }
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    
+    /* Eliminar rastro de etiqueta <a> */
+    text-decoration: none; 
+    display: block;
+    color: inherit;
+}
+
+.card:visited {
+    color: inherit;
+}
+
+.card h3 {
+    color: white;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.card p {
+    color: #888;
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.card:hover, .card:focus {
+    border-color: var(--neon-red);
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+    outline: none;
+}
+
+.card:hover h3, .card:focus h3 {
+    color: var(--neon-red);
+    text-shadow: 0 0 10px var(--neon-red);
+}
